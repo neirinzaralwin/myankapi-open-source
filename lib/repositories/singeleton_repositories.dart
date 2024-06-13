@@ -7,7 +7,7 @@ class SingletonRepo {
   static AuthRepository? _authRepo;
   static ProductRepository? _productRepo;
 
-  static AuthRepository get instance {
+  static AuthRepository get authInstance {
     _authRepo ??= AuthRepository(dio ?? Dio());
     return _authRepo!;
   }
