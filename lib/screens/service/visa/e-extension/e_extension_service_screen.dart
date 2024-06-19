@@ -22,6 +22,7 @@ class _EextensionServiceScreenState extends State<EextensionServiceScreen> {
     return Scaffold(
       backgroundColor: AppColor.scaffoldBackgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColor.scaffoldBackgroundColor,
         title: Row(
           children: [
