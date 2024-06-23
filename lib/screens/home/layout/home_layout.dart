@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myankapi/constants/app_pages.dart';
 import 'package:myankapi/constants/routes.dart';
 import 'package:myankapi/screens/home/nav/home_nav_bar.dart';
+import 'package:myankapi/utils/screen_dimension.dart';
 
 class HomeLayout extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -41,10 +42,15 @@ class HomeLayout extends StatelessWidget {
               ),
             ),
           SliverFillRemaining(
-            child: BranchContainer(
-              key: ValueKey<int>(navigationShell.currentIndex),
-              currentIndex: navigationShell.currentIndex,
-              children: children,
+            child: Center(
+              child: SizedBox(
+                width: ScreenDimension.getWidth(context),
+                child: BranchContainer(
+                  key: ValueKey<int>(navigationShell.currentIndex),
+                  currentIndex: navigationShell.currentIndex,
+                  children: children,
+                ),
+              ),
             ),
           ),
         ],

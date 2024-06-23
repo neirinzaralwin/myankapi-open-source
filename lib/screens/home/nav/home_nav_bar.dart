@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myankapi/constants/app_const.dart';
 import 'package:myankapi/constants/app_font.dart';
+import 'package:myankapi/constants/app_pages.dart';
 import 'package:myankapi/constants/routes.dart';
 import 'package:myankapi/data/nav/model/home_nav_model.dart';
 
@@ -38,8 +39,13 @@ class _HomeNavBarState extends State<HomeNavBar> {
               Padding(
                 padding:
                     const EdgeInsets.only(left: 20.0, right: 50.0, bottom: 5.0),
-                child:
-                    const Text(AppConst.APP_NAME).bold.headMedium.primaryColor,
+                child: InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () => AppPages.router.goNamed(Routes.home),
+                    child: const Text(AppConst.APP_NAME)
+                        .bold
+                        .headMedium
+                        .primaryColor),
               ),
               // Flexible(
               //   child: (kIsWeb)

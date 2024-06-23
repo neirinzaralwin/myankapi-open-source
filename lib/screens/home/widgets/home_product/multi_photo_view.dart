@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MultiPhotoViewInProudct extends StatelessWidget {
   final List<String> imageList;
@@ -33,8 +31,11 @@ class MultiPhotoViewInProudct extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             image: DecorationImage(
-              image: NetworkImage(imageList[0]),
+              image: NetworkImage(imageList[1]),
               fit: BoxFit.cover,
+              onError: (exception, stackTrace) {
+                debugPrint('Failed to load image: $exception');
+              },
             ),
           ),
         ),
@@ -50,6 +51,9 @@ class MultiPhotoViewInProudct extends StatelessWidget {
                   image: DecorationImage(
                     image: NetworkImage(imageList[1]),
                     fit: BoxFit.cover,
+                    onError: (exception, stackTrace) {
+                      debugPrint('Failed to load image: $exception');
+                    },
                   ),
                 ),
               ),

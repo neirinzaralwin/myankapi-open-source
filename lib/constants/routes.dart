@@ -3,6 +3,8 @@ class Routes {
   static const login = 'login';
   static const home = 'home';
 
-  // services
+  // services -------------------------------------
+  // visa
   static const eExtension = 'e-extension';
+  static const trExtension = 'tr-extension';
 }

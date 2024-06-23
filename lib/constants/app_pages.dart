@@ -5,6 +5,7 @@ import 'package:myankapi/screens/auth/login/login_screen.dart';
 import 'package:myankapi/screens/home/home_screen.dart';
 import 'package:myankapi/screens/home/layout/home_layout.dart';
 import 'package:myankapi/screens/service/visa/e-extension/e_extension_service_screen.dart';
+import 'package:myankapi/screens/service/visa/tr-extension/tr_extension_service.screen.dart';
 
 import 'routes.dart';
 
@@ -49,6 +50,13 @@ class AppPages {
                     path: Routes.eExtension,
                     builder: (BuildContext context, GoRouterState state) =>
                         const EextensionServiceScreen(),
+                  ),
+                  GoRoute(
+                    redirect: checkAuthenticated,
+                    name: Routes.trExtension,
+                    path: Routes.trExtension,
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const TrExtensionServiceScreen(),
                   )
                 ],
               ),

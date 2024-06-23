@@ -13,10 +13,13 @@ class CustomCachedNetworkImage extends StatelessWidget {
       height: imageWidth,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.0),
-        image: const DecorationImage(
-          image: NetworkImage(
+        image: DecorationImage(
+          image: const NetworkImage(
               "https://articles.connectnigeria.com/wp-content/uploads/2021/09/branding-1.jpg"),
           fit: BoxFit.cover,
+          onError: (exception, stackTrace) {
+            debugPrint('Failed to load image: $exception');
+          },
         ),
       ),
     );
