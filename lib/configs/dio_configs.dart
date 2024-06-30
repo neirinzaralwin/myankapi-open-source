@@ -10,8 +10,11 @@ class DioConfigs {
   DioConfigs({required this.baseUrl, required this.token});
   late Dio _dio;
   Dio init() {
-    _dio = Dio(BaseOptions(
-        baseUrl: baseUrl, headers: {"authorization": "Myankapi $token"}));
+    _dio = Dio(BaseOptions(baseUrl: baseUrl, headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      // "authorization": "Myankapi $token"
+    }));
 
     if (kDebugMode) {
       _dio.interceptors.add(PrettyDioLogger(

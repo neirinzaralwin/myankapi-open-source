@@ -1,7 +1,9 @@
+import 'package:myankapi/constants/app_const.dart';
+
 class ConstApiRoutes {
   static const String login = '/auth/login';
   static const String register = '/auth/register';
 
-  // products
-  static const String getProducts = '/products';
+  // services
+  static const String services = '/api/${AppConst.API_VERSION}/services';
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product_repository.dart';
+part of 'service_repository.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'product_repository.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _ProductRepository implements ProductRepository {
-  _ProductRepository(
+class _ServiceRepository implements ServiceRepository {
+  _ServiceRepository(
     this._dio, {
     this.baseUrl,
   });
@@ -19,19 +19,20 @@ class _ProductRepository implements ProductRepository {
   String? baseUrl;
 
   @override
-  Future<dynamic> getProducts() async {
+  Future<dynamic> getServices({bool? showInHome}) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'show_in_home': showInHome};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
-      method: 'POST',
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/products',
+          '/api/v1/services',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -11,6 +11,10 @@ class TrExtensionServiceScreen extends StatefulWidget {
 class _TrExtensionServiceScreenState extends State<TrExtensionServiceScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Container(
+        child: const Text('Tr Extension Service'),
+      ),
+    );
   }
 }

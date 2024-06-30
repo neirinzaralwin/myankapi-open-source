@@ -19,6 +19,8 @@ dependencies:
   shared_preferences: ^2.2.3
   cached_network_image: ^3.3.1
   mockito: ^5.4.4
+  flutter_bloc: ^8.1.6
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

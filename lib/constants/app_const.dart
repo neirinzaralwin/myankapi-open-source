@@ -4,7 +4,7 @@ class AppConst {
   static const APP_FONT = "sfpro";
 
   // url
-  static const API_VERSION = "/api/v1";
-  static const BASE_URL = "http://localhost:6000";
+  static const API_VERSION = "v1";
+  static const BASE_URL = "http://127.0.0.1:6000";
   static const PRODUCTION_URL = "https://myankapi.com";
 }
