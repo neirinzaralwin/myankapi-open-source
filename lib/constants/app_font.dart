@@ -28,6 +28,10 @@ extension TextStyleExtensions on Text {
       style: style?.copyWith(color: AppColor.redColor) ??
           const TextStyle(color: AppColor.redColor));
 
+  Text get lightGrey => copyWith(
+      style: style?.copyWith(color: AppColor.grey) ??
+          const TextStyle(color: AppColor.grey));
+
   Text fontSize(double size) => copyWith(
       style: style?.copyWith(fontSize: size) ?? TextStyle(fontSize: size));
 

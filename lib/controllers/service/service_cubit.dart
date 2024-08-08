@@ -6,23 +6,23 @@ import 'package:myankapi/data/service/entity/service_entity.dart';
 import 'package:myankapi/data/service/model/service_model.dart';
 import 'package:myankapi/repositories/api_singleton.dart';
 
-part 'visa_state.dart';
+part 'service_state.dart';
 
-class VisaCubit extends Cubit<VisaState> {
-  VisaCubit() : super(VisaInitial());
+class ServiceCubit extends Cubit<ServiceState> {
+  ServiceCubit() : super(ServiceInitial());
 
   Future<void> getHomeServices() async {
-    emit(HomeVisaLoading());
+    emit(ServiceLoading());
     try {
       final response = await ApiSingleton.service.getServices(showInHome: true);
       final model = GetServices.fromJson(response);
       final entity = GetServicesAdapter(model).toEntity();
-      emit(HomeVisaSuccess(services: entity.data));
+      emit(ServiceSuccess(services: entity.data));
     } catch (e) {
       if (e is DioException) {
-        emit(HomeVisaFailure(e.message ?? "Something went wrong"));
+        emit(ServiceFailure(e.message ?? "Something went wrong"));
       } else {
-        emit(const HomeVisaFailure('Something went wrong in getting services'));
+        emit(const ServiceFailure('Something went wrong in getting services'));
       }
     }
   }

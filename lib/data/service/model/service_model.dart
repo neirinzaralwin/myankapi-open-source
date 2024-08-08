@@ -39,6 +39,8 @@ class Service {
   final String? imageUrl;
   @JsonKey(name: "show_in_home")
   final bool? showInHome;
+  @JsonKey(name: "route")
+  final String? route;
   @JsonKey(name: "createdAt")
   final DateTime? createdAt;
   @JsonKey(name: "updatedAt")
@@ -54,6 +56,7 @@ class Service {
     this.visaDuration,
     this.imageUrl,
     this.showInHome,
+    this.route,
     this.createdAt,
     this.updatedAt,
   });

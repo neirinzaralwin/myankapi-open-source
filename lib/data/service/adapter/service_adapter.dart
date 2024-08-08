@@ -29,6 +29,7 @@ class ServiceAdapter {
       visaDuration: model.visaDuration ?? "",
       imageUrl: model.imageUrl ?? "",
       showInHome: model.showInHome ?? false,
+      route: model.route ?? "",
       createdAt: model.createdAt?.toString() ?? "",
       updatedAt: model.updatedAt?.toString() ?? "",
     );

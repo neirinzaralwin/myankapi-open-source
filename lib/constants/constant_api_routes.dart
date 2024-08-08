@@ -6,4 +6,7 @@ class ConstApiRoutes {
 
   // services
   static const String services = '/api/${AppConst.API_VERSION}/services';
+
+  // shops
+  static const String shops = '/api/${AppConst.API_VERSION}/shops';
 }

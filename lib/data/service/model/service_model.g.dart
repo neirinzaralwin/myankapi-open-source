@@ -29,6 +29,7 @@ Service _$ServiceFromJson(Map<String, dynamic> json) => Service(
       visaDuration: json['visa_duration'] as String?,
       imageUrl: json['imageUrl'] as String?,
       showInHome: json['show_in_home'] as bool?,
+      route: json['route'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -47,6 +48,7 @@ Map<String, dynamic> _$ServiceToJson(Service instance) => <String, dynamic>{
       'visa_duration': instance.visaDuration,
       'imageUrl': instance.imageUrl,
       'show_in_home': instance.showInHome,
+      'route': instance.route,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };

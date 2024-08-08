@@ -22,6 +22,7 @@ class ServiceEntity extends Equatable {
   final String visaDuration;
   final String imageUrl;
   final bool showInHome;
+  final String route;
   final String createdAt;
   final String updatedAt;
 
@@ -34,6 +35,7 @@ class ServiceEntity extends Equatable {
     required this.visaDuration,
     required this.imageUrl,
     required this.showInHome,
+    required this.route,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -48,6 +50,7 @@ class ServiceEntity extends Equatable {
         visaDuration,
         imageUrl,
         showInHome,
+        route,
         createdAt,
         updatedAt,
       ];

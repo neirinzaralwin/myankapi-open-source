@@ -5,6 +5,6 @@ class AppConst {
 
   // url
   static const API_VERSION = "v1";
-  static const BASE_URL = "http://127.0.0.1:6000";
+  static const BASE_URL = "http://127.0.0.1:8000";
   static const PRODUCTION_URL = "https://myankapi.com";
 }

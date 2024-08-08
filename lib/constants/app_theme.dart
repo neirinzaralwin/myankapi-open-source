@@ -10,11 +10,6 @@ final ThemeData appThemeData = ThemeData(
   dialogBackgroundColor: AppColor.white,
   applyElevationOverlayColor: false,
   fontFamily: AppConst.APP_FONT,
-  // fade in fade out transition
-  pageTransitionsTheme: const PageTransitionsTheme(builders: {
-    TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-    TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder()
-  }),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       foregroundColor: AppColor.primaryColor,
@@ -27,6 +22,15 @@ final ThemeData appThemeData = ThemeData(
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: AppColor.primaryColor,
+    ),
+  ),
+  filledButtonTheme: FilledButtonThemeData(
+    style: FilledButton.styleFrom(
+      backgroundColor: AppColor.primaryColor,
+      foregroundColor: AppColor.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50),
+      ),
     ),
   ),
   iconButtonTheme: IconButtonThemeData(

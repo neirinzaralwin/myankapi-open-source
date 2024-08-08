@@ -18,12 +18,13 @@ class DioConfigs {
 
     if (kDebugMode) {
       _dio.interceptors.add(PrettyDioLogger(
-          requestHeader: true,
-          requestBody: true,
-          responseBody: true,
-          responseHeader: true,
-          error: true,
-          compact: true));
+          // requestHeader: true,
+          // requestBody: true,
+          // responseBody: true,
+          // responseHeader: true,
+          // error: true,
+          // compact: true,
+          ));
     }
     _dio.interceptors.add(InterceptorsWrapper(onResponse: (response, handler) {
       handler.next(response);
