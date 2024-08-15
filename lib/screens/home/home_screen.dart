@@ -3,7 +3,6 @@ import 'package:myankapi/constants/app_color.dart';
 import 'package:myankapi/constants/app_font.dart';
 import 'package:myankapi/screens/home/widgets/home_category_widget.dart';
 import 'package:myankapi/screens/home/widgets/home_service_widget.dart';
-
 import 'widgets/home_product/home_product_grid_view.dart';
 import 'widgets/home_shop_widget.dart';
 
@@ -24,15 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
+            child: HomeShopWidget(),
+          ),
+          const SliverToBoxAdapter(
             child: Column(
               children: [
-                SizedBox(height: 10.0),
-                HomeShopWidget(),
                 SizedBox(height: 10.0),
                 HomeCategoryWidget(),
                 SizedBox(height: 20.0),
                 HomeServiceWidget(),
-                SizedBox(height: 15.0)
+                SizedBox(height: 15.0),
               ],
             ),
           ),

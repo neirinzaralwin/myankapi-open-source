@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:myankapi/data/product/model/product.dart';
 part 'get_all_shops.g.dart';
 
 @JsonSerializable()
@@ -33,7 +34,7 @@ class ShopData {
   @JsonKey(name: "owner_name")
   final String? ownerName;
   @JsonKey(name: "products")
-  final List<dynamic>? products;
+  final List<Product>? products;
   @JsonKey(name: "createdAt")
   final DateTime? createdAt;
   @JsonKey(name: "updatedAt")

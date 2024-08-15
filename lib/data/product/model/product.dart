@@ -5,6 +5,8 @@ part 'product.g.dart';
 class Product {
   @JsonKey(name: "name")
   final String? name;
+  @JsonKey(name: "image")
+  final List<String>? photos;
   @JsonKey(name: "price")
   final int? price;
   @JsonKey(name: "stock")
@@ -20,6 +22,7 @@ class Product {
 
   Product({
     this.name,
+    this.photos,
     this.price,
     this.stock,
     this.isActive,

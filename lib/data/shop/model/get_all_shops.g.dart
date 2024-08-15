@@ -27,7 +27,9 @@ ShopData _$ShopDataFromJson(Map<String, dynamic> json) => ShopData(
           : ShopCategory.fromJson(json['category'] as Map<String, dynamic>),
       name: json['name'] as String?,
       ownerName: json['owner_name'] as String?,
-      products: json['products'] as List<dynamic>?,
+      products: (json['products'] as List<dynamic>?)
+          ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
+          .toList(),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),

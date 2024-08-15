@@ -9,6 +9,7 @@ class ProductAdapter extends Equatable {
 
   ProductEntity toEntity() => ProductEntity(
       id: model.id ?? "",
+      photos: model.photos ?? [],
       name: model.name ?? "",
       price: model.price ?? 0.0,
       stock: model.stock ?? 0,

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 // platform
 
 class ScreenDimension {
-  static double getWidth(BuildContext context) {
-    if (kIsWeb) return 600.0;
+  static double getWidth(BuildContext context, {double? width = 600.0}) {
+    if (kIsWeb) return width ?? 0.0;
     if (Platform.isAndroid || Platform.isIOS) {
       return MediaQuery.of(context).size.width;
     }
