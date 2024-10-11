@@ -30,7 +30,7 @@ class DioConfigs {
       handler.next(response);
     }, onError: ((error, handler) async {
       if (error.response?.statusCode == 401) {
-        AppPages.router.goNamed(Routes.login);
+        AppPages.router.goNamed(Routes.auth);
       } else {
         handler.next(error);
       }

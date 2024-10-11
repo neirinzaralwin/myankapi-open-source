@@ -16,18 +16,16 @@ class HomeLayout extends StatelessWidget {
   });
 
   bool get isHomeRoute {
-    bool result =
-        AppPages.router.routerDelegate.currentConfiguration.uri.path ==
-            "/${Routes.home}";
+    bool result = AppPages.router.routerDelegate.currentConfiguration.uri.path == "/${Routes.home}";
     return result;
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenWdith = ScreenDimension.getWidth(context);
     return Scaffold(
       body: CustomScrollView(
-        scrollBehavior:
-            ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        scrollBehavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         physics: const NeverScrollableScrollPhysics(),
         slivers: [
           if (kIsWeb || isHomeRoute)
@@ -44,7 +42,7 @@ class HomeLayout extends StatelessWidget {
           SliverFillRemaining(
             child: Center(
               child: SizedBox(
-                width: ScreenDimension.getWidth(context),
+                width: screenWdith,
                 child: BranchContainer(
                   key: ValueKey<int>(navigationShell.currentIndex),
                   currentIndex: navigationShell.currentIndex,
@@ -60,8 +58,7 @@ class HomeLayout extends StatelessWidget {
 }
 
 class BranchContainer extends StatelessWidget {
-  const BranchContainer(
-      {super.key, required this.currentIndex, required this.children});
+  const BranchContainer({super.key, required this.currentIndex, required this.children});
   final int currentIndex;
   final List<Widget> children;
 

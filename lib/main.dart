@@ -7,6 +7,7 @@ import 'constants/app_pages.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await appConfig(isProduction: false);
+  await Future.delayed(const Duration(seconds: 1));
   runApp(const MyApp());
 }
 

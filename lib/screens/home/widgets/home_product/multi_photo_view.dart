@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 class MultiPhotoViewInProudct extends StatelessWidget {
   final List<String> imageList;
   final double imageWidth;
-  const MultiPhotoViewInProudct(
-      {super.key, required this.imageList, required this.imageWidth});
+  const MultiPhotoViewInProudct({super.key, required this.imageList, required this.imageWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +17,22 @@ class MultiPhotoViewInProudct extends StatelessWidget {
       case 3:
         return _buildThreeGrid();
       default:
-        return Container();
+        return _buildOneGrid();
     }
+  }
+
+  Widget _buildOneGrid() {
+    return Container(
+      width: imageWidth,
+      height: imageWidth,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        image: DecorationImage(
+          image: NetworkImage(imageList[0]),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
   }
 
   Widget _buildThreeGrid() {
@@ -40,11 +53,25 @@ class MultiPhotoViewInProudct extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 5.0),
-        Expanded(
-          flex: 1,
+        // Container(
+        //   width: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 10,
+        //   height: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 10,
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(10.0),
+        //     image: DecorationImage(
+        //       image: NetworkImage(imageList[1]),
+        //       fit: BoxFit.cover,
+        //       onError: (exception, stackTrace) {
+        //         debugPrint('Failed to load image: $exception');
+        //       },
+        //     ),
+        //   ),
+        // ),
+        Flexible(
           child: Column(
             children: [
               Container(
+                width: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 10,
                 height: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 2.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
@@ -59,12 +86,16 @@ class MultiPhotoViewInProudct extends StatelessWidget {
               ),
               const SizedBox(height: 5.0),
               Container(
+                width: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 10,
                 height: (((imageWidth / 1.5) - (10.0 * 2)) / 2) - 2.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
-                    image: NetworkImage(imageList[2]),
+                    image: NetworkImage(imageList[1]),
                     fit: BoxFit.cover,
+                    onError: (exception, stackTrace) {
+                      debugPrint('Failed to load image: $exception');
+                    },
                   ),
                 ),
               ),

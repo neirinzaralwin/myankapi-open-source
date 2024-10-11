@@ -20,8 +20,7 @@ class HomeCategoryWidget extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
-                        border: Border.all(
-                            color: AppColor.primaryColor, width: 1.5),
+                        border: Border.all(color: AppColor.primaryColor, width: 1.5),
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       child: ClipRRect(
@@ -38,7 +37,7 @@ class HomeCategoryWidget extends StatelessWidget {
                     SizedBox(
                         width: 100.0,
                         child: const Text(
-                          "Cannabis",
+                          "Exotics",
                           textAlign: TextAlign.center,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,

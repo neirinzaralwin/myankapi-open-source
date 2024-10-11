@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   static const Color swatch = Color(0xff000000);
-  static const Color primaryColor = Color.fromRGBO(0, 103, 105, 1);
+  static const Color primaryColor = Color(0xFF006769);
   static const Color secondaryColor = Color.fromARGB(255, 64, 165, 120);
   static const Color mildGreen = Color.fromARGB(255, 205, 221, 213);
   static const Color veryMildGreen = Color.fromARGB(255, 243, 243, 243);

@@ -11,17 +11,11 @@ class HomeProductGridView extends StatefulWidget {
 }
 
 class _HomeProductGridViewState extends State<HomeProductGridView> {
-  // final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
-  //   crossAxisCount: 1,
-  //   childAspectRatio: 0.88,
-  // );
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = ScreenDimension.getWidth(context);
     double imageWidth = screenWidth - (HomeScreen.homePadding * 2);
 
-    // sliver list
     return SliverList(
       delegate: SliverChildListDelegate([
         HomePostWidget(imageWidth: imageWidth),

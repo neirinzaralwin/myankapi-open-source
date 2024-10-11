@@ -1,5 +1,5 @@
 class AppConst {
-  static const APP_NAME = "MyanKapi";
+  static const APP_NAME = "Scarlet Vertigo";
   static const APP_VERSION = "1.0.0";
   static const APP_FONT = "sfpro";
 

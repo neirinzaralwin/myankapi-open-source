@@ -1,15 +1,19 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // platform
 
 class ScreenDimension {
   static double getWidth(BuildContext context, {double? width = 600.0}) {
-    if (kIsWeb) return width ?? 0.0;
-    if (Platform.isAndroid || Platform.isIOS) {
-      return MediaQuery.of(context).size.width;
+    if (MediaQuery.of(context).size.width >= 600.0) {
+      return width ?? 0.0;
     }
-    return 0.0;
+    return MediaQuery.of(context).size.width;
+  }
+
+  static bool isMobileView(BuildContext context) {
+    return MediaQuery.of(context).size.width < 600.0;
+  }
+
+  static bool isTabletView(BuildContext context) {
+    return MediaQuery.of(context).size.width < 880.0;
   }
 }

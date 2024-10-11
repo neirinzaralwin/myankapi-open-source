@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myankapi/constants/app_color.dart';
 import 'package:myankapi/constants/app_font.dart';
 import 'package:myankapi/screens/home/widgets/home_category_widget.dart';
-import 'package:myankapi/screens/home/widgets/home_service_widget.dart';
 import 'widgets/home_product/home_product_grid_view.dart';
-import 'widgets/home_shop_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,19 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
-            child: HomeShopWidget(),
+            child: SizedBox(height: 15.0),
           ),
-          const SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(height: 10.0),
-                HomeCategoryWidget(),
-                SizedBox(height: 20.0),
-                HomeServiceWidget(),
-                SizedBox(height: 15.0),
-              ],
-            ),
-          ),
+          SliverToBoxAdapter(
+              child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: HomeScreen.homePadding),
+            child: const Text("Feed").bold.headLarge.greyColor,
+          )),
+          const HomeProductGridView(),
           // dot widget
           const SliverToBoxAdapter(
             child: SizedBox(
@@ -49,13 +42,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          // sliver grid view
           SliverToBoxAdapter(
-              child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: HomeScreen.homePadding),
-            child: const Text("Feed").bold.headLarge.greyColor,
-          )),
-          const HomeProductGridView(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: HomeScreen.homePadding),
+                  child: const Text("Category").bold.headLarge.greyColor,
+                ),
+                const SizedBox(height: 15.0),
+                const HomeCategoryWidget(),
+                const SizedBox(height: 20.0),
+              ],
+            ),
+          ),
         ],
       ),
     );

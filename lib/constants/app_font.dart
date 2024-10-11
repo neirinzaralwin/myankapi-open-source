@@ -35,6 +35,10 @@ extension TextStyleExtensions on Text {
   Text fontSize(double size) => copyWith(
       style: style?.copyWith(fontSize: size) ?? TextStyle(fontSize: size));
 
+  Text get title => copyWith(
+      style:
+          style?.copyWith(fontSize: 24.0) ?? const TextStyle(fontSize: 24.0));
+
   Text get bodySmall => copyWith(
       style:
           style?.copyWith(fontSize: 12.0) ?? const TextStyle(fontSize: 12.0));
