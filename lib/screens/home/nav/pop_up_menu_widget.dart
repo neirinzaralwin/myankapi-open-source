@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myankapi/constants/app_color.dart';
 import 'package:myankapi/constants/app_font.dart';
 
 enum Menu { settings, contact_us, about, logout }
@@ -10,7 +11,27 @@ class PopUpMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<Menu>(
-      icon: const Icon(Icons.more_vert),
+      padding: const EdgeInsets.all(3.0),
+      icon: Row(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: AppColor.primaryColor, width: 1.5),
+              borderRadius: BorderRadius.circular(50.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50.0),
+              child: Image.network(
+                "https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small_2x/profile-icon-design-free-vector.jpg",
+                width: 35.0,
+                height: 35.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          const Icon(Icons.arrow_drop_down, color: AppColor.darkGray),
+        ],
+      ),
       onSelected: (Menu item) {},
       itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
         PopupMenuItem<Menu>(

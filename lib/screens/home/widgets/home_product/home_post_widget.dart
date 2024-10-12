@@ -78,12 +78,8 @@ class HomePostWidget extends StatelessWidget {
                         ],
                       ),
                       const Text(
-                              "Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.fade)
-                          .bodyMedium
-                          .greyColor,
+                        "Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
+                      ).bodyMedium.greyColor,
                     ],
                   ),
                 )
@@ -114,10 +110,9 @@ class HomePostWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Text("Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
-                          maxLines: 1, softWrap: false, overflow: TextOverflow.fade)
-                      .bodyMedium
-                      .greyColor,
+                  const Text(
+                    "Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
+                  ).bodyMedium.greyColor,
                 ],
               ),
             ),
@@ -159,12 +154,8 @@ class HomePostWidget extends StatelessWidget {
                         ],
                       ),
                       const Text(
-                              "Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.fade)
-                          .bodyMedium
-                          .greyColor,
+                        "Product description lorem ipsm dolor sit amet lorem ipsm lorm ipsm",
+                      ).bodyMedium.greyColor,
                     ],
                   ),
                 )

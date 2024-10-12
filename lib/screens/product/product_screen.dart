@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myankapi/constants/app_color.dart';
-import 'package:myankapi/constants/app_font.dart';
-import 'package:myankapi/screens/home/home_screen.dart';
+import 'package:myankapi/screens/product/widgets/product_header.dart';
 import 'widgets/product_grid_widget.dart';
 
 class ProductScreen extends StatefulWidget {
@@ -14,27 +13,18 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColor.scaffoldBackgroundColor,
       body: CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: SizedBox(height: 15.0),
           ),
+          ProductHeader(),
+          ProductGridWidget(),
           SliverToBoxAdapter(
-              child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: HomeScreen.homePadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Products").bold.headLarge.greyColor,
-                const SizedBox(height: 5.0),
-                const Text("Find your favorite products").bodySmall.lightGrey,
-                const SizedBox(height: 10.0),
-              ],
-            ),
-          )),
-          const ProductGridWidget(),
+            child: SizedBox(height: 20.0),
+          ),
         ],
       ),
     );
