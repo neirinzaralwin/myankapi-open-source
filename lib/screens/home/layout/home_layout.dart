@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myankapi/constants/app_pages.dart';
 import 'package:myankapi/constants/routes.dart';
 import 'package:myankapi/screens/home/nav/home_nav_bar.dart';
+import 'package:myankapi/screens/product/product_screen.dart';
 import 'package:myankapi/utils/screen_dimension.dart';
 
 class HomeLayout extends StatelessWidget {
@@ -22,7 +23,6 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWdith = ScreenDimension.getWidth(context);
     return Scaffold(
       body: CustomScrollView(
         scrollBehavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
@@ -40,15 +40,24 @@ class HomeLayout extends StatelessWidget {
               ),
             ),
           SliverFillRemaining(
-            child: Center(
-              child: SizedBox(
-                width: screenWdith,
-                child: BranchContainer(
-                  key: ValueKey<int>(navigationShell.currentIndex),
-                  currentIndex: navigationShell.currentIndex,
-                  children: children,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: ScreenDimension.getWidth(context),
+                  child: BranchContainer(
+                    key: ValueKey<int>(navigationShell.currentIndex),
+                    currentIndex: navigationShell.currentIndex,
+                    children: children,
+                  ),
                 ),
-              ),
+                if (MediaQuery.of(context).size.width > 1000)
+                  Flexible(
+                      child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          width: 400.0,
+                          child: const ProductScreen()))
+              ],
             ),
           ),
         ],

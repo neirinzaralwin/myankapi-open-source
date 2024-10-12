@@ -19,6 +19,10 @@ final ThemeData appThemeData = ThemeData(
       ),
     ),
   ),
+  popupMenuTheme: const PopupMenuThemeData(
+    color: AppColor.scaffoldBackgroundColor,
+    iconColor: AppColor.primaryColor,
+  ),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: AppColor.primaryColor,
@@ -34,20 +38,17 @@ final ThemeData appThemeData = ThemeData(
     ),
   ),
   iconButtonTheme: IconButtonThemeData(
-      style: IconButton.styleFrom(
-          backgroundColor: AppColor.white, foregroundColor: AppColor.black)),
+      style:
+          IconButton.styleFrom(backgroundColor: AppColor.white, foregroundColor: AppColor.black)),
   appBarTheme: const AppBarTheme(
       centerTitle: true,
       elevation: 0.0,
       scrolledUnderElevation: 0,
       backgroundColor: AppColor.appBarColor,
       iconTheme: IconThemeData(color: AppColor.primaryColor),
-      titleTextStyle: TextStyle(
-          color: AppColor.black,
-          fontFamily: AppConst.APP_FONT,
-          fontSize: 16.0)),
-  listTileTheme: const ListTileThemeData(
-      titleTextStyle: TextStyle(color: AppColor.secondaryColor)),
+      titleTextStyle:
+          TextStyle(color: AppColor.black, fontFamily: AppConst.APP_FONT, fontSize: 16.0)),
+  listTileTheme: const ListTileThemeData(titleTextStyle: TextStyle(color: AppColor.secondaryColor)),
   useMaterial3: true,
 );
 
@@ -68,16 +69,9 @@ int tintValue(int value, double factor) =>
     max(0, min((value + ((255 - value) * factor)).round(), 255));
 
 Color tintColor(Color color, double factor) => Color.fromRGBO(
-    tintValue(color.red, factor),
-    tintValue(color.green, factor),
-    tintValue(color.blue, factor),
-    1);
+    tintValue(color.red, factor), tintValue(color.green, factor), tintValue(color.blue, factor), 1);
 
-int shadeValue(int value, double factor) =>
-    max(0, min(value - (value * factor).round(), 255));
+int shadeValue(int value, double factor) => max(0, min(value - (value * factor).round(), 255));
 
-Color shadeColor(Color color, double factor) => Color.fromRGBO(
-    shadeValue(color.red, factor),
-    shadeValue(color.green, factor),
-    shadeValue(color.blue, factor),
-    1);
+Color shadeColor(Color color, double factor) => Color.fromRGBO(shadeValue(color.red, factor),
+    shadeValue(color.green, factor), shadeValue(color.blue, factor), 1);
