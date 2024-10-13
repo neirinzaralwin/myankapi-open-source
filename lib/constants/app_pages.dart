@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myankapi/screens/auth/auth_screen.dart';
 import 'package:myankapi/screens/home/home_screen.dart';
 import 'package:myankapi/screens/home/layout/home_layout.dart';
+import 'package:myankapi/screens/product/product-detail/product_detail_screen.dart';
 import 'routes.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -37,6 +38,11 @@ class AppPages {
                 name: Routes.home,
                 path: "/${Routes.home}",
                 builder: (BuildContext context, GoRouterState state) => const HomeScreen(),
+              ),
+              GoRoute(
+                name: Routes.productDetail,
+                path: "/${Routes.productDetail}",
+                builder: (BuildContext context, GoRouterState state) => const ProductDetailScreen(),
               ),
             ],
           ),

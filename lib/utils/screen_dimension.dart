@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class ScreenDimension {
   static double getWidth(BuildContext context, {double? width = 600.0}) {
-    if (MediaQuery.of(context).size.width >= 600.0) {
-      return width ?? 0.0;
+    if (MediaQuery.of(context).size.width >= width!) {
+      return width;
     }
     return MediaQuery.of(context).size.width;
   }

@@ -41,24 +41,23 @@ class _HomeLayoutState extends State<HomeLayout> {
           scrollBehavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           physics: const NeverScrollableScrollPhysics(),
           slivers: [
-            if (isHomeRoute)
-              SliverAppBar(
-                elevation: 0.0,
-                scrolledUnderElevation: 0.0,
-                pinned: true,
-                backgroundColor: Colors.grey[200],
-                bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(10.0),
-                  child: HomeNavBar(
-                      navigationShell: widget.navigationShell,
-                      onChanged: (e) {},
-                      onSearchingChanged: (val) {
-                        setState(() {
-                          isSearching = val;
-                        });
-                      }),
-                ),
+            SliverAppBar(
+              elevation: 0.0,
+              scrolledUnderElevation: 0.0,
+              pinned: true,
+              backgroundColor: Colors.grey[200],
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(10.0),
+                child: HomeNavBar(
+                    navigationShell: widget.navigationShell,
+                    onChanged: (e) {},
+                    onSearchingChanged: (val) {
+                      setState(() {
+                        isSearching = val;
+                      });
+                    }),
               ),
+            ),
             SliverFillRemaining(
               child: Stack(
                 children: [
@@ -66,14 +65,16 @@ class _HomeLayoutState extends State<HomeLayout> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: ScreenDimension.getWidth(context),
+                        width: isHomeRoute
+                            ? ScreenDimension.getWidth(context)
+                            : ScreenDimension.getWidth(context, width: 1000),
                         child: BranchContainer(
                           key: ValueKey<int>(widget.navigationShell.currentIndex),
                           currentIndex: widget.navigationShell.currentIndex,
                           children: widget.children,
                         ),
                       ),
-                      if (MediaQuery.of(context).size.width > 1000)
+                      if (MediaQuery.of(context).size.width > 1000 && isHomeRoute)
                         Flexible(
                             child: Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
