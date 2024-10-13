@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   static double homePadding = 20.0;
+  static final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.scaffoldBackgroundColor,
+      key: HomeScreen.scaffoldKey,
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

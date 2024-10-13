@@ -28,6 +28,16 @@ final ThemeData appThemeData = ThemeData(
       foregroundColor: AppColor.primaryColor,
     ),
   ),
+  segmentedButtonTheme: SegmentedButtonThemeData(
+    selectedIcon: const Icon(Icons.circle, size: 8.0, color: AppColor.primaryColor),
+    style: SegmentedButton.styleFrom(
+      backgroundColor: AppColor.scaffoldBackgroundColor,
+      selectedBackgroundColor: AppColor.secondaryColor.withOpacity(0.5),
+    ),
+  ),
+  textSelectionTheme: TextSelectionThemeData(
+    selectionColor: AppColor.secondaryColor.withOpacity(0.5),
+  ),
   filledButtonTheme: FilledButtonThemeData(
     style: FilledButton.styleFrom(
       backgroundColor: AppColor.primaryColor,

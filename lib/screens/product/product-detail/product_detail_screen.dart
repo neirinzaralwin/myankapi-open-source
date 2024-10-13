@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myankapi/constants/app_color.dart';
+import 'package:myankapi/screens/home/home_screen.dart';
+
+import 'widgets/product_detail_bottom_widget.dart';
+import 'widgets/product_detail_top_widget.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -11,10 +14,23 @@ class ProductDetailScreen extends StatefulWidget {
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        backgroundColor: AppColor.grey,
-        body: Center(
-          child: Text("Product Detail Screen"),
-        ));
+    return Scaffold(
+        body: SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: HomeScreen.homePadding),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: Center(
+          child: Wrap(
+            runSpacing: HomeScreen.homePadding,
+            spacing: HomeScreen.homePadding,
+            children: const [
+              ProductDetailTopWidget(),
+              ProductDetailBottomWidget(),
+              SizedBox(height: 30.0),
+            ],
+          ),
+        ),
+      ),
+    ));
   }
 }
